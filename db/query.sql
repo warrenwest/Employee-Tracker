@@ -5,3 +5,4 @@ ON department.id = roles.department_id
 LEFT JOIN employee
 ON roles.id = employee.roles_id
 ORDER BY department.department_name;
+

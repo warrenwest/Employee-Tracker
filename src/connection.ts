@@ -24,4 +24,10 @@ const connectToDb = async () => {
   }
 };
 
+export async function query(sql: string, params = []) {
+  await connectToDb(); // Ensure the connection is established
+  const { rows } = await pool.query(sql, params); // Execute query
+  return rows; // Return the result rows
+}
+
 export { pool, connectToDb };

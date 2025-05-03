@@ -5,7 +5,7 @@ CREATE DATABASE department_db;
 
 CREATE TABLE department (
   id SERIAL PRIMARY KEY,
-  department_name VARCHAR(100) NOT NULL
+  department_name TEXT UNIQUE NOT NULL
 );
 
 CREATE TABLE roles (
@@ -31,4 +31,4 @@ CREATE TABLE employee (
     FOREIGN KEY (manager_id)
     REFERENCES employee(id)
     ON DELETE SET NULL
-)
+);
